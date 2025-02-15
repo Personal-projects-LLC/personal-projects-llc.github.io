@@ -1,5 +1,5 @@
 import { readFile } from 'fs/promises';
-import { toPascalCase } from '../../utils/string';
+// import { toPascalCase } from '../../utils/string';
 
 interface ComponentProp {
   name: string;
@@ -21,14 +21,14 @@ interface ComponentMetadata {
 export async function parseComponentDoc(filePath: string): Promise<ComponentMetadata> {
   const content = await readFile(filePath, 'utf8');
   const lines = content.split('\n');
-  
+
   const metadata: ComponentMetadata = {
     name: '',
     description: '',
     props: [],
     examples: [],
     bestPractices: [],
-    accessibility: []
+    accessibility: [],
   };
 
   let currentSection: string | null = null;
@@ -36,7 +36,7 @@ export async function parseComponentDoc(filePath: string): Promise<ComponentMeta
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i].trim();
-    
+
     // Skip empty lines
     if (!line) continue;
 
@@ -71,12 +71,12 @@ export async function parseComponentDoc(filePath: string): Promise<ComponentMeta
       case 'props':
         if (line.startsWith('- ')) {
           const [propDef, ...descLines] = line.substring(2).split('\n');
-          const [propName, propType] = propDef.split(':').map(s => s.trim());
+          const [propName, propType] = propDef.split(':').map((s) => s.trim());
           metadata.props.push({
             name: propName,
             type: propType,
             description: descLines.join(' ').trim(),
-            required: !propType.includes('?')
+            required: !propType.includes('?'),
           });
         }
         break;
@@ -113,13 +113,10 @@ export async function parseComponentDoc(filePath: string): Promise<ComponentMeta
 export function generateComponentCode(metadata: ComponentMetadata): string {
   const { name, props, description } = metadata;
 
-  const imports = [
-    "import { FC } from 'react';",
-    "import clsx from 'clsx';",
-  ].join('\n');
+  const imports = ["import { FC } from 'react';", "import clsx from 'clsx';"].join('\n');
 
   const propsInterface = `interface ${name}Props {
-  ${props.map(prop => `${prop.name}${prop.required ? '' : '?'}: ${prop.type};${prop.description ? ` // ${prop.description}` : ''}`).join('\n  ')}
+  ${props.map((prop) => `${prop.name}${prop.required ? '' : '?'}: ${prop.type};${prop.description ? ` // ${prop.description}` : ''}`).join('\n  ')}
 }`;
 
   const componentCode = `
@@ -127,7 +124,7 @@ export function generateComponentCode(metadata: ComponentMetadata): string {
  * ${description}
  */
 export const ${name}: FC<${name}Props> = ({
-  ${props.map(prop => prop.name).join(',\n  ')}
+  ${props.map((prop) => prop.name).join(',\n  ')}
 }) => {
   return (
     <button
@@ -153,13 +150,7 @@ export const ${name}: FC<${name}Props> = ({
 };
 `;
 
-  const fullCode = [
-    imports,
-    '',
-    propsInterface,
-    '',
-    componentCode
-  ].join('\n');
+  const fullCode = [imports, '', propsInterface, '', componentCode].join('\n');
 
   return fullCode;
 }

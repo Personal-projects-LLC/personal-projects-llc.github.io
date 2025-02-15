@@ -1,31 +1,30 @@
 import { Command } from 'commander';
 import chalk from 'chalk';
-import path from 'path';
+// import path from 'path';
 import fs from 'fs/promises';
-import { 
+import {
   ProgressStorage,
   ProgressFormatter,
   TaskType,
   TaskComplexity,
   TaskStatus,
-  ProgressConfig 
+  ProgressConfig,
 } from '../../core/progress/index';
 
 const defaultConfig: ProgressConfig = {
   storage: {
     path: '.pbs/progress',
-    format: 'json'
+    format: 'json',
   },
   reporting: {
     progressFile: 'PROGRESS.md',
     roadmapFile: 'ROADMAP.md',
-    sprintReportsPath: 'docs/sprints'
-  }
+    sprintReportsPath: 'docs/sprints',
+  },
 };
 
 export function createProgressCommand(): Command {
-  const progress = new Command('progress')
-    .description('Manage project progress and documentation');
+  const progress = new Command('progress').description('Manage project progress and documentation');
 
   // Add entry command
   progress
@@ -50,7 +49,7 @@ export function createProgressCommand(): Command {
           status: (options.status || 'planned') as TaskStatus,
           description: options.description,
           sprint: options.sprint,
-          tags: options.tags
+          tags: options.tags,
         });
 
         console.log(chalk.green('✓ Added new entry:'));
@@ -58,7 +57,6 @@ export function createProgressCommand(): Command {
 
         // Update progress files
         await updateProgressFiles(storage);
-
       } catch (error) {
         console.error(chalk.red('Error adding entry:'), error);
         process.exit(1);
@@ -76,15 +74,14 @@ export function createProgressCommand(): Command {
         const storage = new ProgressStorage(defaultConfig);
         await storage.load();
 
-        const entry = await storage.updateEntry(id, { 
-          status: status as TaskStatus 
+        const entry = await storage.updateEntry(id, {
+          status: status as TaskStatus,
         });
 
         console.log(chalk.green('✓ Updated entry status:'));
         console.log(ProgressFormatter.formatEntry(entry));
 
         await updateProgressFiles(storage);
-
       } catch (error) {
         console.error(chalk.red('Error updating status:'), error);
         process.exit(1);
@@ -109,7 +106,7 @@ export function createProgressCommand(): Command {
           startDate: new Date().toISOString(),
           goals: options.goals || [],
           completedGoals: [],
-          blockers: []
+          blockers: [],
         });
 
         // Set as current sprint
@@ -120,7 +117,6 @@ export function createProgressCommand(): Command {
         console.log(ProgressFormatter.formatSprint(sprint, []));
 
         await updateProgressFiles(storage);
-
       } catch (error) {
         console.error(chalk.red('Error starting sprint:'), error);
         process.exit(1);

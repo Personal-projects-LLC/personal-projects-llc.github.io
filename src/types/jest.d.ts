@@ -8,27 +8,36 @@ declare global {
   }
 }
 
+type TemplateVariableValue = 
+  | string 
+  | number 
+  | boolean 
+  | null 
+  | undefined
+  | TemplateVariableValue[]
+  | { [key: string]: TemplateVariableValue };
+
 declare module '@jest/globals' {
   export interface ExpectStatic {
-    stringContaining(expected: string): any;
-    any(constructor: any): any;
+    stringContaining(expected: string): TemplateVariableValue;
+    any(constructor: TemplateVariableValue): TemplateVariableValue;
   }
 
   export interface Assertion {
-    toBe(expected: any): void;
-    toHaveBeenCalledWith(...args: any[]): void;
+    toBe(expected: TemplateVariableValue): void;
+    toHaveBeenCalledWith(...args: TemplateVariableValue[]): void;
     toHaveBeenCalledTimes(count: number): void;
     toHaveBeenCalled(): void;
     rejects: {
       toThrow(message?: string | Error | undefined): Promise<void>;
     };
     resolves: {
-      toBe(expected: any): Promise<void>;
+      toBe(expected: TemplateVariableValue): Promise<void>;
       toThrow(message?: string | Error | undefined): Promise<void>;
     };
-    toEqual(expected: any): void;
+    toEqual(expected: TemplateVariableValue): void;
     toMatch(expected: string | RegExp): void;
-    toContain(expected: any): void;
+    toContain(expected: TemplateVariableValue): void;
     toBeDefined(): void;
     toBeUndefined(): void;
     toBeNull(): void;

@@ -1,4 +1,4 @@
-import { loadPBSConfig } from '../../core/config';
+// import { loadPBSConfig } from '../../core/config';
 import { parseComponentDoc, generateComponentCode } from '../../core/parser/component';
 import chalk from 'chalk';
 import path from 'path';
@@ -10,7 +10,7 @@ interface GenerateOptions {
 }
 
 const VALID_TYPES = ['component', 'page', 'feature'] as const;
-type GenerateType = typeof VALID_TYPES[number];
+type GenerateType = (typeof VALID_TYPES)[number];
 
 function isValidType(type: string): type is GenerateType {
   return VALID_TYPES.includes(type as GenerateType);
@@ -34,7 +34,7 @@ export async function generate(options: GenerateOptions) {
     }
 
     // Load configuration
-    const config = await loadPBSConfig();
+    // const config = await loadPBSConfig();
 
     // Ensure documentation file exists
     const docPath = path.resolve(process.cwd(), options.path);
@@ -53,11 +53,7 @@ export async function generate(options: GenerateOptions) {
         console.log(chalk.yellow('Parsing component documentation...'));
         const metadata = await parseComponentDoc(docPath);
         generatedCode = generateComponentCode(metadata);
-        outputPath = path.join(
-          process.cwd(),
-          'src/components',
-          `${metadata.name}.tsx`
-        );
+        outputPath = path.join(process.cwd(), 'src/components', `${metadata.name}.tsx`);
         break;
       }
       case 'page':
@@ -77,7 +73,6 @@ export async function generate(options: GenerateOptions) {
     console.log('1. Review the generated code');
     console.log('2. Add any necessary tests');
     console.log('3. Test the component in your application');
-
   } catch (error) {
     if (error instanceof Error) {
       console.error(chalk.red('Error generating code:'), error.message);
