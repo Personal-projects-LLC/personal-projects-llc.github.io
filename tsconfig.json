@@ -1,28 +1,65 @@
+/* eslint-disable jsonc/sort-keys */
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "lib": ["ES2020"],
-    "outDir": "./dist",
-    "rootDir": "./src",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
     "strict": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "noUncheckedIndexedAccess": true,
+
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "allowUnreachableCode": false,
+    "noFallthroughCasesInSwitch": true,
+
+    "target": "es2017",
+    "outDir": "out",
+    "sourceMap": true,
+
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "checkJs": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
+
+    "jsx": "preserve",
+    "noEmit": true,
+    "isolatedModules": true,
+    "incremental": true,
+
+    // Load types
+    "types": ["vitest/globals"],
+
+    // Path aliases
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
-    }
+      "@/*": ["./src/*"],
+      "@/public/*": ["./public/*"]
+    },
+
+    // Editor support
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
+  "exclude": ["./out/**/*", "./node_modules/**/*", "**/*.spec.ts", "**/*.e2e.ts"],
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.js",
-    "src/**/*.jsx",
-    "src/**/__tests__/**/*.ts",
-    "src/**/__tests__/**/*.tsx"
-  ],
-  "exclude": ["node_modules", "dist"]
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".storybook/*.ts",
+    ".next/types/**/*.ts",
+    "**/*.mts"
+  ]
 }

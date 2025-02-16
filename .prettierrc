@@ -1,21 +1,16 @@
 {
-  "printWidth": 100,
-  "tabWidth": 2,
-  "useTabs": false,
   "semi": true,
   "singleQuote": true,
+  "tabWidth": 2,
+  "printWidth": 100,
   "trailingComma": "es5",
   "bracketSpacing": true,
   "arrowParens": "always",
   "endOfLine": "lf",
+  "jsxSingleQuote": false,
   "jsxBracketSameLine": false,
-  "overrides": [
-    {
-      "files": "*.md",
-      "options": {
-        "tabWidth": 2,
-        "proseWrap": "always"
-      }
-    }
-  ]
+  "useTabs": false,
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "insertPragma": false
 }
