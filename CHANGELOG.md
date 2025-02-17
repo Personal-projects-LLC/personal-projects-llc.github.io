@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.4.0...v1.5.0) (2025-02-17)
+
+
+### Features
+
+* update progress and next steps in PROGRESS.md; remove unused @clerk/localizations dependency ([f35e3b2](https://github.com/Personal-projects-LLC/PBS/commit/f35e3b210ae3ad2c0d724a71ea9d3c9729eb62be))
+
 # [1.4.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.3.0...v1.4.0) (2025-02-17)
 
 
