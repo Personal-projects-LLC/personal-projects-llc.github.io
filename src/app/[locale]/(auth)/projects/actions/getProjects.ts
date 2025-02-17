@@ -4,6 +4,7 @@ import type { Project } from '@/types/Project';
 import { ProjectRepository } from '@/repositories/ProjectRepository';
 import { ProjectService } from '@/services/ProjectService';
 import { auth } from '@clerk/nextjs/server';
+import { redirect } from 'next/navigation';
 
 const projectService = new ProjectService(new ProjectRepository());
 
@@ -11,7 +12,7 @@ export async function getProjects(): Promise<Project[]> {
   const { userId } = await auth();
 
   if (!userId) {
-    throw new Error('Unauthorized');
+    redirect('/sign-in');
   }
 
   try {

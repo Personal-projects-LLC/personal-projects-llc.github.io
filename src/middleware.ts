@@ -1,44 +1,39 @@
 import type { NextFetchEvent, NextRequest } from 'next/server';
-import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
+import { clerkMiddleware } from '@clerk/nextjs/server';
 import createMiddleware from 'next-intl/middleware';
 import { routing } from './libs/i18nNavigation';
 
 const intlMiddleware = createMiddleware(routing);
-const isProtectedRoute = createRouteMatcher(['/dashboard(.*)', '/:locale/dashboard(.*)', '/projects(.*)', '/:locale/projects(.*)']);
 
-const isAuthPage = createRouteMatcher([
-  '/sign-in(.*)',
-  '/:locale/sign-in(.*)',
-  '/sign-up(.*)',
-  '/:locale/sign-up(.*)',
-]);
+// Защищенные маршруты без учета локали
+const protectedPaths = ['/dashboard', '/projects'];
+
+const isProtectedRoute = (path: string) => {
+  // Проверяем как с локалью, так и без
+  return protectedPaths.some(prefix =>
+    path.startsWith(prefix) // /projects
+    || /^\/[^/]+\/(?:dashboard|projects)/.test(path), // /en/projects или /fr/projects
+  );
+};
 
 export default function middleware(request: NextRequest, event: NextFetchEvent) {
-  // Run Clerk middleware only when it's necessary
-  if (isAuthPage(request) || isProtectedRoute(request)) {
-    return clerkMiddleware(async (auth, req) => {
-      if (isProtectedRoute(req)) {
-        const locale = req.nextUrl.pathname.match(/(\/.*)\/dashboard/)?.at(1) ?? '';
+  // Применяем intl middleware для всех запросов
+  const response = intlMiddleware(request);
 
-        const signInUrl = new URL(`${locale}/sign-in`, req.url);
-
-        await auth.protect({
-          // `unauthenticatedUrl` is needed to avoid error: "Unable to find `next-intl` locale because the middleware didn't run on this request"
-          unauthenticatedUrl: signInUrl.toString(),
-        });
-      }
-
-      return intlMiddleware(req);
+  // Если это защищенный маршрут, применяем Clerk
+  if (isProtectedRoute(request.nextUrl.pathname)) {
+    return clerkMiddleware((_req) => {
+      return response;
     })(request, event);
   }
 
-  return intlMiddleware(request);
+  return response;
 }
 
 export const config = {
   matcher: [
     // Skip Next.js internals and all static files, unless found in search params
-    '/((?!_next|monitoring|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
+    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
     // Always run for API routes
     '/(api|trpc)(.*)',
   ],

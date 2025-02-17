@@ -13,6 +13,7 @@ export default async function AuthLayout(props: {
   let signInUrl = '/sign-in';
   let signUpUrl = '/sign-up';
   let dashboardUrl = '/dashboard';
+  let projectsUrl = '/projects';
   let afterSignOutUrl = '/';
 
   if (locale === 'fr') {
@@ -23,6 +24,7 @@ export default async function AuthLayout(props: {
     signInUrl = `/${locale}${signInUrl}`;
     signUpUrl = `/${locale}${signUpUrl}`;
     dashboardUrl = `/${locale}${dashboardUrl}`;
+    projectsUrl = `/${locale}${projectsUrl}`;
     afterSignOutUrl = `/${locale}${afterSignOutUrl}`;
   }
 
@@ -32,7 +34,7 @@ export default async function AuthLayout(props: {
       signInUrl={signInUrl}
       signUpUrl={signUpUrl}
       signInFallbackRedirectUrl={dashboardUrl}
-      signUpFallbackRedirectUrl={dashboardUrl}
+      signUpFallbackRedirectUrl={projectsUrl}
       afterSignOutUrl={afterSignOutUrl}
     >
       {props.children}
