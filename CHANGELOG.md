@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.2.0...v1.3.0) (2025-02-17)
+
+
+### Features
+
+* remove unused components and validations; add new homepage layout ([647f804](https://github.com/Personal-projects-LLC/PBS/commit/647f804e20c9d00a9f83c534f600cc8965e32fdd))
+
 # [1.2.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.1.0...v1.2.0) (2025-02-17)
 
 
