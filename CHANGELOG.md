@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.9.0...v1.10.0) (2025-02-17)
+
+
+### Features
+
+* update header to include user sign-out functionality and display user name ([1b9bab7](https://github.com/Personal-projects-LLC/PBS/commit/1b9bab709bd5609b8598d552d8da7a28e39a1b2f))
+
 # [1.9.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.8.0...v1.9.0) (2025-02-17)
 
 
