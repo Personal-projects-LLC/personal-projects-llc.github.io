@@ -67,11 +67,6 @@
     - [x] Session management
     - [x] Protected routes implementation
     - [x] Auth middleware configuration
-  - [x] Internationalization
-    - [x] next-intl setup
-    - [x] Language switcher component
-    - [x] Translation files
-    - [x] Route handling
 - [x] Architecture refactoring
   - [x] Create layered architecture
     - [x] Services layer for business logic
@@ -134,7 +129,6 @@
   - Visual: Percy
   - Component: Storybook
 - **Documentation**: VitePress
-- **Internationalization**: next-intl
 - **Form Handling**: react-hook-form + zod
 - **Error Monitoring**: Sentry
 - **Development Tools**:
@@ -165,9 +159,6 @@
   - react-hook-form: ^7.54.2
   - @hookform/resolvers: ^4.0.0
   - zod: ^3.24.2
-
-- **Internationalization**:
-  - next-intl: ^3.26.3
 
 - **Monitoring**:
   - @sentry/nextjs: ^8.54.0

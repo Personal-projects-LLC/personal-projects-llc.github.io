@@ -1,9 +1,6 @@
 import withBundleAnalyzer from '@next/bundle-analyzer';
 import { withSentryConfig } from '@sentry/nextjs';
-import createNextIntlPlugin from 'next-intl/plugin';
 import './src/libs/Env';
-
-const withNextIntl = createNextIntlPlugin('./src/libs/i18n.ts');
 
 const bundleAnalyzer = withBundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
@@ -11,16 +8,14 @@ const bundleAnalyzer = withBundleAnalyzer({
 
 /** @type {import('next').NextConfig} */
 export default withSentryConfig(
-  bundleAnalyzer(
-    withNextIntl({
-      eslint: {
-        dirs: ['.'],
-      },
-      poweredByHeader: false,
-      reactStrictMode: true,
-      serverExternalPackages: ['@electric-sql/pglite'],
-    }),
-  ),
+  bundleAnalyzer({
+    eslint: {
+      dirs: ['.'],
+    },
+    poweredByHeader: false,
+    reactStrictMode: true,
+    serverExternalPackages: ['@electric-sql/pglite'],
+  }),
   {
     // For all available options, see:
     // https://github.com/getsentry/sentry-webpack-plugin#options
@@ -29,7 +24,6 @@ export default withSentryConfig(
     project: 'nextjs-boilerplate',
 
     // Only print logs for uploading source maps in CI
-    silent: !process.env.CI,
 
     // For all available options, see:
     // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/

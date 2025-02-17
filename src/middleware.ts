@@ -1,40 +1,21 @@
-import type { NextFetchEvent, NextRequest } from 'next/server';
-import { clerkMiddleware } from '@clerk/nextjs/server';
-import createMiddleware from 'next-intl/middleware';
-import { routing } from './libs/i18nNavigation';
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
+import { NextResponse } from 'next/server';
 
-const intlMiddleware = createMiddleware(routing);
+const isProtectedRoute = createRouteMatcher(['/projects(.*)']);
 
-// Защищенные маршруты без учета локали
-const protectedPaths = ['/projects'];
+export default clerkMiddleware(async (auth, req) => {
+  const { userId, redirectToSignIn } = await auth();
 
-const isProtectedRoute = (path: string) => {
-  // Проверяем как с локалью, так и без
-  return protectedPaths.some(prefix =>
-    path.startsWith(prefix) // /projects
-    || /^\/[^/]+\/projects/.test(path), // /en/projects или /fr/projects
-  );
-};
-
-export default function middleware(request: NextRequest, event: NextFetchEvent) {
-  // Применяем intl middleware для всех запросов
-  const response = intlMiddleware(request);
-
-  // Если это защищенный маршрут, применяем Clerk
-  if (isProtectedRoute(request.nextUrl.pathname)) {
-    return clerkMiddleware((_req) => {
-      return response;
-    })(request, event);
+  if (!userId && isProtectedRoute(req)) {
+    return redirectToSignIn();
   }
 
-  return response;
-}
+  return NextResponse.next();
+});
 
 export const config = {
   matcher: [
-    // Skip Next.js internals and all static files, unless found in search params
     '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
-    // Always run for API routes
     '/(api|trpc)(.*)',
   ],
 };
