@@ -1,7 +1,6 @@
 {
-  "name": "next-js-boilerplate",
-  "version": "3.62.0",
-  "author": "Ixartz (https://github.com/ixartz)",
+  "name": "pbs",
+  "version": "0.1.0",
   "scripts": {
     "dev:spotlight": "spotlight-sidecar",
     "dev:next": "next dev --turbo",
@@ -26,7 +25,10 @@
     "storybook:serve": "http-server storybook-static --port 6006 --silent",
     "serve-storybook": "run-s storybook:*",
     "test-storybook:ci": "start-server-and-test serve-storybook http://127.0.0.1:6006 test-storybook",
-    "prepare": "husky"
+    "prepare": "husky",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
     "@arcjet/next": "^1.0.0-beta.2",
@@ -112,6 +114,7 @@
     "tailwindcss": "^4.0.6",
     "typescript": "^5.7.3",
     "vite-tsconfig-paths": "^5.1.4",
+    "vitepress": "^1.0.0-rc.40",
     "vitest": "^3.0.5",
     "vitest-fail-on-console": "^0.7.1"
   },
