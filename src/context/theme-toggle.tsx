@@ -16,7 +16,7 @@ const ThemeToggle = ({ className }: ThemeToggleProps) => {
       variant="ghost"
       size="icon"
       onClick={toggleTheme}
-      className={className}
+      className={`${className} cursor-pointer`}
       aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
     >
       {isDark ? <SunIcon /> : <MoonIcon />}

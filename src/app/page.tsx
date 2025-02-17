@@ -22,7 +22,7 @@ const Home = () => {
             <Button
               asChild
               size="lg"
-              className="animate-fade-in [--animate-delay:200ms]"
+              className="border animate-fade-in [--animate-delay:200ms]"
             >
               <Link href="/projects">View Projects</Link>
             </Button>
@@ -30,7 +30,7 @@ const Home = () => {
               asChild
               variant="secondary"
               size="lg"
-              className="animate-fade-in [--animate-delay:400ms]"
+              className="border animate-fade-in [--animate-delay:400ms]"
             >
               <Link href="/projects/new">Create New Project</Link>
             </Button>
