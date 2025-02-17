@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.1.0...v1.2.0) (2025-02-17)
+
+
+### Features
+
+* add projects page with authentication and project retrieval functionality ([e626324](https://github.com/Personal-projects-LLC/PBS/commit/e626324408fcc828bd1f935fb31b344d70fab714))
+* remove demo components and add modal component with type definitions ([ce40299](https://github.com/Personal-projects-LLC/PBS/commit/ce4029982122d64a06c4d025ab5ed07c16ecdb6e))
+
 # [1.1.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.0.0...v1.1.0) (2025-02-17)
 
 
