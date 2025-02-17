@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.0.0...v1.1.0) (2025-02-17)
+
+
+### Features
+
+* add projects page and API integration, update environment variables, and remove funding file ([f65f47e](https://github.com/Personal-projects-LLC/PBS/commit/f65f47eabe563072724808d430867567d430f239))
+
 # 1.0.0 (2025-02-17)
 
 
