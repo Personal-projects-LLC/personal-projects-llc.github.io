@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.6.0...v1.7.0) (2025-02-17)
+
+
+### Features
+
+* integrate theme provider and add global theme styles; update button styles for consistency ([3f9e870](https://github.com/Personal-projects-LLC/PBS/commit/3f9e870eded04968c4fcafc437477cf7b14e5d56))
+
 # [1.6.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.5.0...v1.6.0) (2025-02-17)
 
 
