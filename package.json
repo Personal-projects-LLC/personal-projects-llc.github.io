@@ -32,7 +32,6 @@
   },
   "dependencies": {
     "@arcjet/next": "^1.0.0-beta.2",
-    "@clerk/localizations": "^3.10.5",
     "@clerk/nextjs": "^6.11.2",
     "@electric-sql/pglite": "^0.2.16",
     "@hookform/resolvers": "^4.0.0",

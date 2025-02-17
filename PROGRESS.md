@@ -2,7 +2,7 @@
 
 ## 📊 Overall Progress
 
-- Phase 1: In Progress 🔄 [0%]
+- Phase 1: In Progress 🔄 [35%]
 - Phase 2: Not Started 🔄 [0%]
 - Phase 3: Not Started 🔄 [0%]
 - Phase 4: Not Started 🔄 [0%]
@@ -12,7 +12,7 @@
 
 ### Phase 1: Basic Functionality (MVP) - Q1 2025
 
-#### 1.1 Project Setup [0%]
+#### 1.1 Project Setup [35%]
 
 - [x] Repository creation
   - [x] Basic directory structure created
@@ -61,7 +61,6 @@
     - [x] Database migrations setup
   - [x] Clerk Auth integration
     - [x] Installation of @clerk/nextjs
-    - [x] Installation of @clerk/localizations
     - [x] Database schema update
     - [x] Auth configuration
     - [x] Session management
@@ -104,17 +103,27 @@
 
 ## 📈 Statistics
 
-- **Completed Tasks**: 0
-- **In Progress**: 0
-- **Not Started**: 65
+- **Completed Tasks**: 25
+- **In Progress**: 5
+- **Not Started**: 35
 - **Total Tasks**: 65
-- **Completion Rate: 0%**
+- **Completion Rate: 38%**
 
 ## 🔄 Next Steps
 
-1. Initialize project with Next.js 15
-2. Set up development environment
-3. Configure essential tools and dependencies
+1. Complete Projects Functionality
+  1.1 Add project creation
+  1.2 Implement project editing
+  1.3 Add project deletion
+  1.4 Implement filtering and sorting
+2. Start Tasks System Development
+  2.1 Create Task model and schema
+  2.2 Set up Projects-Tasks relationship
+  2.3 Implement basic CRUD operations
+3. Enhance User Interface
+  3.1 Add loading states
+  3.2 Improve error handling
+  3.3 Add animations and transitions
 
 ## 🔧 Technical Stack
 
@@ -148,7 +157,6 @@
 
 - **Authentication**:
   - @clerk/nextjs: ^6.11.2
-  - @clerk/localizations: ^3.10.5
 
 - **Database**:
   - drizzle-orm: ^0.39.3
