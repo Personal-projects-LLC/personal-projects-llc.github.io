@@ -4,8 +4,7 @@ import createMiddleware from 'next-intl/middleware';
 import { routing } from './libs/i18nNavigation';
 
 const intlMiddleware = createMiddleware(routing);
-
-const isProtectedRoute = createRouteMatcher(['/dashboard(.*)', '/:locale/dashboard(.*)']);
+const isProtectedRoute = createRouteMatcher(['/dashboard(.*)', '/:locale/dashboard(.*)', '/projects(.*)', '/:locale/projects(.*)']);
 
 const isAuthPage = createRouteMatcher([
   '/sign-in(.*)',
