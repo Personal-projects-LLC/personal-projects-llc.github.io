@@ -6,13 +6,13 @@ import { routing } from './libs/i18nNavigation';
 const intlMiddleware = createMiddleware(routing);
 
 // Защищенные маршруты без учета локали
-const protectedPaths = ['/dashboard', '/projects'];
+const protectedPaths = ['/projects'];
 
 const isProtectedRoute = (path: string) => {
   // Проверяем как с локалью, так и без
   return protectedPaths.some(prefix =>
     path.startsWith(prefix) // /projects
-    || /^\/[^/]+\/(?:dashboard|projects)/.test(path), // /en/projects или /fr/projects
+    || /^\/[^/]+\/projects/.test(path), // /en/projects или /fr/projects
   );
 };
 
