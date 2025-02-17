@@ -1,4 +1,4 @@
-import AuthDebug from '@/components/AuthDebug';
+// import AuthDebug from '@/components/AuthDebug';
 import ProjectList from '@/components/projects/ProjectList';
 import { getProjects } from './actions';
 
@@ -8,7 +8,7 @@ const ProjectsPage = async () => {
   return (
     <main className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Projects</h1>
-      <AuthDebug />
+      {/* <AuthDebug /> */}
       <div className="mt-4">
         <ProjectList projects={projects} />
       </div>

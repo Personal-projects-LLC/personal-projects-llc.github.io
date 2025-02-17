@@ -1,5 +1,6 @@
 'use client';
 
+import { SignOutButton, useUser } from '@clerk/nextjs';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import ThemeToggle from '../../context/theme-toggle';
@@ -13,6 +14,7 @@ const navigation = [
 ];
 
 const Header = () => {
+  const { user } = useUser();
   const pathname = usePathname();
 
   return (
@@ -45,6 +47,10 @@ const Header = () => {
             <Button variant="secondary" asChild>
               <Link href="/projects/new">New Project</Link>
             </Button>
+            {user && <span>{user.fullName || user.username}</span>}
+            <SignOutButton>
+              <button type="button">Sign out</button>
+            </SignOutButton>
           </div>
         </nav>
       </Container>
