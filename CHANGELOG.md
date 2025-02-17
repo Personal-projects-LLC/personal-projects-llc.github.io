@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.8.0...v1.9.0) (2025-02-17)
+
+
+### Features
+
+* integrate Clerk for authentication and add sign-in page ([74f1e9f](https://github.com/Personal-projects-LLC/PBS/commit/74f1e9ffa9e3d2d152e314f754888e625c8079ac))
+
 # [1.8.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.7.0...v1.8.0) (2025-02-17)
 
 
