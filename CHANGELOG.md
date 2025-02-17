@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.7.0...v1.8.0) (2025-02-17)
+
+
+### Features
+
+* add SonarQube webhook and GitHub integration ([46f39cf](https://github.com/Personal-projects-LLC/PBS/commit/46f39cfbee729af95560ba3ad6ec87c63dcbd4a2))
+
 # [1.7.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.6.0...v1.7.0) (2025-02-17)
 
 
