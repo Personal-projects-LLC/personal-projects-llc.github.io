@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.3.0...v1.4.0) (2025-02-17)
+
+
+### Features
+
+* remove next-intl integration; add new homepage and projects page ([79f3bd6](https://github.com/Personal-projects-LLC/PBS/commit/79f3bd60deba639a5ee613054e03fa4899ac7995))
+
 # [1.3.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.2.0...v1.3.0) (2025-02-17)
 
 
