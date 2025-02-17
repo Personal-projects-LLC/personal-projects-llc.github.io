@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import Layout from '@/components/layout';
 import { ThemeProvider } from '@/context/theme-provider';
+import { ClerkProvider } from '@clerk/nextjs';
 import '@/styles/global.css';
 
 export const metadata: Metadata = {
@@ -34,11 +35,11 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
     <html lang="en">
       <body suppressHydrationWarning>
         <ThemeProvider>
-          <Layout>
-
-            {children}
-          </Layout>
-
+          <ClerkProvider>
+            <Layout>
+              {children}
+            </Layout>
+          </ClerkProvider>
         </ThemeProvider>
       </body>
     </html>
