@@ -2,7 +2,7 @@
 
 import type { ProjectListProps } from '@/types/Project';
 
-export const ProjectList = ({ projects }: ProjectListProps) => {
+const ProjectList = ({ projects }: ProjectListProps) => {
   if (!projects?.length) {
     return (
       <div className="text-center py-4">
@@ -39,3 +39,5 @@ export const ProjectList = ({ projects }: ProjectListProps) => {
     </div>
   );
 };
+
+export default ProjectList;

@@ -2,7 +2,7 @@
 
 import { useAuth } from '@clerk/nextjs';
 
-export function AuthDebug() {
+const AuthDebug = () => {
   const { userId, isLoaded, isSignedIn } = useAuth();
 
   if (!isLoaded) {
@@ -25,4 +25,6 @@ export function AuthDebug() {
       </pre>
     </div>
   );
-}
+};
+
+export default AuthDebug;

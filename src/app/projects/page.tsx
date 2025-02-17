@@ -1,9 +1,9 @@
-import { AuthDebug } from '@/components/AuthDebug';
-import { ProjectList } from '@/components/projects/ProjectList';
+import AuthDebug from '@/components/AuthDebug';
+import ProjectList from '@/components/projects/ProjectList';
 import { ClerkProvider } from '@clerk/nextjs';
 import { getProjects } from './actions';
 
-export default async function ProjectsPage() {
+const ProjectsPage = async () => {
   const projects = await getProjects();
 
   return (
@@ -17,4 +17,6 @@ export default async function ProjectsPage() {
       </main>
     </ClerkProvider>
   );
-}
+};
+
+export default ProjectsPage;

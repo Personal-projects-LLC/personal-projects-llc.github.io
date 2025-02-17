@@ -2,7 +2,7 @@
 
 import type { ModalProps } from '@/types/Other';
 
-export function Modal({ onCloseAction, children, title }: ModalProps) {
+const Modal = ({ onCloseAction, children, title }: ModalProps) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
       <div className="bg-white rounded-lg p-6 w-full max-w-md">
@@ -20,4 +20,6 @@ export function Modal({ onCloseAction, children, title }: ModalProps) {
       </div>
     </div>
   );
-}
+};
+
+export default Modal;
