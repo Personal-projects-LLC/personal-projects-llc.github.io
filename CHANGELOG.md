@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.5.0...v1.6.0) (2025-02-17)
+
+
+### Features
+
+* add theme context and utility components; refactor existing components to use new context ([d4f3745](https://github.com/Personal-projects-LLC/PBS/commit/d4f37452d17c9f036f2c73e8fda656daadd78173))
+
 # [1.5.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.4.0...v1.5.0) (2025-02-17)
 
 
