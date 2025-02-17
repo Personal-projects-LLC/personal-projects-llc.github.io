@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
+import Layout from '@/components/layout';
 import { ThemeProvider } from '@/context/theme-provider';
 import '@/styles/global.css';
 
@@ -33,7 +34,11 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
     <html lang="en">
       <body suppressHydrationWarning>
         <ThemeProvider>
-          {children}
+          <Layout>
+
+            {children}
+          </Layout>
+
         </ThemeProvider>
       </body>
     </html>

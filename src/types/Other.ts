@@ -25,3 +25,21 @@ export type ThemeContextType = {
 export type ButtonProps = {
   asChild?: boolean;
 } & ButtonHTMLAttributes<HTMLButtonElement> & VariantProps<typeof buttonVariants>;
+
+export type PageHeaderProps = {
+  title: string;
+  description?: string;
+  className?: string;
+};
+
+export type ContentSectionProps = {
+  title?: string;
+  children: React.ReactNode;
+  className?: string;
+};
+
+export type ContactFormData = {
+  name: string;
+  email: string;
+  message: string;
+};
