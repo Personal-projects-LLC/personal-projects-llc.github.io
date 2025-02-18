@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.10.0...v1.11.0) (2025-02-18)
+
+
+### Features
+
+* add authentication layout and pages ([ea43d37](https://github.com/Personal-projects-LLC/PBS/commit/ea43d3701e197faddf22ddc55d44959bab485d9d))
+
 # [1.10.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.9.0...v1.10.0) (2025-02-17)
 
 
