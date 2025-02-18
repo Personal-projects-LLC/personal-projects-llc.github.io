@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.11.0...v1.12.0) (2025-02-18)
+
+
+### Features
+
+* extend protected routes to include tasks ([e99ace7](https://github.com/Personal-projects-LLC/PBS/commit/e99ace7534765575c793b6b77b42c2acf7037966))
+
 # [1.11.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.10.0...v1.11.0) (2025-02-18)
 
 
