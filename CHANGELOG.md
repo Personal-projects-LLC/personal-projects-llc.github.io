@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.12.0...v1.13.0) (2025-02-18)
+
+
+### Features
+
+* update progress tracking and add user menu component ([0964ebf](https://github.com/Personal-projects-LLC/PBS/commit/0964ebf500bafcf6c3e7927d12ec2f3e277c6e27))
+
 # [1.12.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.11.0...v1.12.0) (2025-02-18)
 
 
