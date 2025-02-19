@@ -44,7 +44,7 @@ const Header = () => {
           <div className="flex items-center gap-4">
             <ThemeToggle />
             <Button variant="secondary" asChild>
-              <Link href="/projects/new">New Project</Link>
+              <Link href="/projects?new=true">New Project</Link>
             </Button>
             <UserMenu />
           </div>

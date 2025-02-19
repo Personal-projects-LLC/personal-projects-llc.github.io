@@ -45,7 +45,7 @@ describe('Header', () => {
 
     const newProjectButton = screen.getByText('New Project').closest('a');
 
-    expect(newProjectButton).toHaveAttribute('href', '/projects/new');
+    expect(newProjectButton).toHaveAttribute('href', '/projects?new=true');
   });
 
   it('is responsive with hidden navigation on mobile', () => {

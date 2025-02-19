@@ -30,7 +30,7 @@ const Home = () => {
             size="lg"
             className="border animate-fade-in [--animate-delay:400ms]"
           >
-            <Link href="/projects/new">Create New Project</Link>
+            <Link href="/projects?new=true">Create New Project</Link>
           </Button>
         </div>
       </div>

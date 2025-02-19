@@ -3,22 +3,36 @@
 import type { Project, ProjectsClientProps } from '@/types/Project';
 import CreateProjectModal from '@/components/projects/CreateProjectModal';
 import ProjectList from '@/components/projects/ProjectList';
-import { useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import { createProject } from './actions';
 
 export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
-  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const showCreateModal = searchParams.get('new') === 'true';
+
   const [projects, setProjects] = useState<Project[]>(initialProjects);
+  const [modalOpenStatus, setModalOpenStatus] = useState(showCreateModal);
+
+  useEffect(() => {
+    setModalOpenStatus(showCreateModal);
+  }, [showCreateModal]);
 
   const handleCreateProject = async (data: { name: string; description: string }) => {
     try {
       const newProject = await createProject(data);
       setProjects(prev => [...prev, newProject]);
-      setIsCreateModalOpen(false);
+      router.replace('/projects'); // Закрываем модальное окно через URL
     } catch (error) {
       console.error('Failed to create project:', error);
       // TODO: Add error notification
     }
+  };
+
+  const handleCloseModal = () => {
+    router.replace('/projects');
+    setModalOpenStatus(false);
   };
 
   return (
@@ -27,7 +41,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
         <h1 className="text-2xl font-bold">Projects</h1>
         <button
           type="button"
-          onClick={() => setIsCreateModalOpen(true)}
+          onClick={() => router.push('/projects?new=true')}
           className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
         >
           Create Project
@@ -37,8 +51,8 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
       <ProjectList projects={projects} />
 
       <CreateProjectModal
-        isOpen={isCreateModalOpen}
-        onCloseAction={() => setIsCreateModalOpen(false)}
+        isOpen={modalOpenStatus}
+        onCloseAction={handleCloseModal}
         onSubmit={handleCreateProject}
       />
     </main>
