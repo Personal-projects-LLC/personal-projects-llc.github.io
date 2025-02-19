@@ -8,7 +8,6 @@ import { drizzle as drizzlePglite } from 'drizzle-orm/pglite';
 import { migrate as migratePglite } from 'drizzle-orm/pglite/migrator';
 import { PHASE_PRODUCTION_BUILD } from 'next/dist/shared/lib/constants';
 import { Client } from 'pg';
-import { Env } from './Env';
 
 let client;
 let drizzle;

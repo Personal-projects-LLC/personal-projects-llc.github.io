@@ -1,12 +1,11 @@
 'use client';
 
-import { useClerk, useUser } from '@clerk/nextjs';
 import { useState } from 'react';
 
 const UserMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { user } = useUser();
-  const { signOut } = useClerk();
+  // const { user } = useUser();
+  // const { signOut } = useSignOut();
 
   if (!user) {
     return null;

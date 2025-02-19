@@ -63,7 +63,6 @@
     - [x] Authentication schema added
     - [x] Database migrations setup
   - [x] Clerk Auth integration
-    - [x] Installation of @clerk/nextjs
     - [x] Database schema update
     - [x] Auth configuration
     - [x] Session management
@@ -173,7 +172,6 @@
   - pg: ^8.13.2
 
 - **Monitoring**:
-  - @sentry/nextjs: ^8.54.0
   - pino: ^9.6.0
   - @logtail/pino: ^0.5.2
 

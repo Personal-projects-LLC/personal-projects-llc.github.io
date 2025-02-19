@@ -5,7 +5,6 @@ import { createProjectSchema } from '@/libs/Schema';
 import { ProjectRepository } from '@/repositories/ProjectRepository';
 import { ProjectService } from '@/services/ProjectService';
 import { ProjectStatus } from '@/types/Project';
-import { auth } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
 
 const projectService = new ProjectService(new ProjectRepository());

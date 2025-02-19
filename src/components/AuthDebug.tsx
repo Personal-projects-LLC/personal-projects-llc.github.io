@@ -1,7 +1,5 @@
 'use client';
 
-import { useAuth } from '@clerk/nextjs';
-
 const AuthDebug = () => {
   const { userId, isLoaded, isSignedIn } = useAuth();
 
