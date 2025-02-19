@@ -1,3 +1,10 @@
+# [1.20.0](https://github.com/Personal-projects-LLC/personal-projects-llc.github.io/compare/v1.19.0...v1.20.0) (2025-02-19)
+
+
+### Features
+
+* set dynamic property to force-static in robots configuration ([707311a](https://github.com/Personal-projects-LLC/personal-projects-llc.github.io/commit/707311ae947fcec46d6fe5bf584639451377eebb))
+
 # [1.19.0](https://github.com/Personal-projects-LLC/personal-projects-llc.github.io/compare/v1.18.0...v1.19.0) (2025-02-19)
 
 
