@@ -11,7 +11,7 @@ export type ModalProps = {
 
 export type CreateProjectModalProps = {
   isOpen: boolean;
-  onClose: () => void;
+  onCloseAction: () => void;
   onSubmit: (data: { name: string; description: string }) => Promise<void>;
 };
 

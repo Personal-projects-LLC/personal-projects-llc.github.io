@@ -10,25 +10,25 @@ import { redirect } from 'next/navigation';
 
 const projectService = new ProjectService(new ProjectRepository());
 
-export async function getProjects(): Promise<Project[]> {
+const getProjects = async (): Promise<Project[]> => {
   const { userId } = await auth();
 
   if (!userId) {
     redirect('/sign-in');
-  }
+  };
 
   try {
     return await projectService.getAllProjects(userId);
   } catch (error) {
     console.error('Failed to get projects:', error);
     throw new Error('Failed to get projects');
-  }
-}
+  };
+};
 
-export async function createProject(data: {
+const createProject = async (data: {
   name: string;
   description?: string;
-}): Promise<Project> {
+}): Promise<Project> => {
   const { userId } = await auth();
 
   if (!userId) {
@@ -50,4 +50,6 @@ export async function createProject(data: {
     console.error('Failed to create project:', error);
     throw new Error('Failed to create project');
   }
-}
+};
+
+export { createProject, getProjects };

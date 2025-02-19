@@ -4,7 +4,7 @@ import type { CreateProjectModalProps } from '@/types/Other';
 import Modal from '@/components/Modal';
 import { useState } from 'react';
 
-const CreateProjectModal = ({ isOpen, onClose, onSubmit }: CreateProjectModalProps) => {
+const CreateProjectModal = ({ isOpen, onCloseAction, onSubmit }: CreateProjectModalProps) => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -15,7 +15,7 @@ const CreateProjectModal = ({ isOpen, onClose, onSubmit }: CreateProjectModalPro
 
     try {
       await onSubmit({ name, description });
-      onClose();
+      onCloseAction();
       setName('');
       setDescription('');
     } catch (error) {
@@ -26,7 +26,7 @@ const CreateProjectModal = ({ isOpen, onClose, onSubmit }: CreateProjectModalPro
   };
 
   return (
-    <Modal isOpen={isOpen} onCloseAction={onClose} title="Create New Project">
+    <Modal isOpen={isOpen} onCloseAction={onCloseAction} title="Create New Project">
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700">
@@ -58,7 +58,7 @@ const CreateProjectModal = ({ isOpen, onClose, onSubmit }: CreateProjectModalPro
         <div className="flex justify-end gap-3 pt-4">
           <button
             type="button"
-            onClick={onClose}
+            onClick={onCloseAction}
             className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
           >
             Cancel

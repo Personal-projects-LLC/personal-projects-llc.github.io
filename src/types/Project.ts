@@ -14,6 +14,10 @@ export type ProjectCardProps = {
   onDelete?: (project: Project) => void;
 };
 
+export type ProjectsClientProps = {
+  initialProjects: Project[];
+};
+
 export type ProjectListProps = {
   projects: Project[];
 };
