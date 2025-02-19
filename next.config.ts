@@ -22,8 +22,8 @@ const nextConfig: import('next').NextConfig = {
 };
 
 const sentryWebpackPluginOptions = {
-  org: 'your-sentry-org', // Замените на вашу организацию в Sentry
-  project: 'your-sentry-project', // Замените на ваш проект в Sentry
+  org: 'personal-projects-llc', // Замените на вашу организацию в Sentry
+  project: 'javascript-nextjs', // Замените на ваш проект в Sentry
   authToken: process.env.SENTRY_AUTH_TOKEN, // Токен аутентификации Sentry
   silent: true, // Подавление логов во время загрузки sourcemap
 };
