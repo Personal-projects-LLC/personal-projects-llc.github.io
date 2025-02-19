@@ -1,3 +1,10 @@
+# [1.21.0](https://github.com/Personal-projects-LLC/personal-projects-llc.github.io/compare/v1.20.0...v1.21.0) (2025-02-19)
+
+
+### Features
+
+* set dynamic property to force-static in sitemap configuration ([17c9829](https://github.com/Personal-projects-LLC/personal-projects-llc.github.io/commit/17c98292773c93edb816c8be2bbd874ac5069d65))
+
 # [1.20.0](https://github.com/Personal-projects-LLC/personal-projects-llc.github.io/compare/v1.19.0...v1.20.0) (2025-02-19)
 
 
