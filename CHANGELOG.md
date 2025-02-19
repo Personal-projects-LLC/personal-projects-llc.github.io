@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.14.0...v1.15.0) (2025-02-19)
+
+
+### Features
+
+* refactor project actions; add ProjectsClient component ([ba1d2f3](https://github.com/Personal-projects-LLC/PBS/commit/ba1d2f3b999ee44a60adadf33dd803d20a0b160e))
+
 # [1.14.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.13.0...v1.14.0) (2025-02-19)
 
 
