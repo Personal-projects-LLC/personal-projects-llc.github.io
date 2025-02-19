@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/Personal-projects-LLC/personal-projects-llc.github.io/compare/v1.18.0...v1.19.0) (2025-02-19)
+
+
+### Features
+
+* update Sentry configuration with correct organization and project names ([9f496e6](https://github.com/Personal-projects-LLC/personal-projects-llc.github.io/commit/9f496e69857f589196919a425ddff5c7d4f68f0b))
+
 # [1.18.0](https://github.com/Personal-projects-LLC/personal-projects-llc.github.io/compare/v1.17.0...v1.18.0) (2025-02-19)
 
 
