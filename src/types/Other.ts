@@ -9,6 +9,12 @@ export type ModalProps = {
   title: string;
 };
 
+export type CreateProjectModalProps = {
+  isOpen: boolean;
+  onClose: () => void;
+  onSubmit: (data: { name: string; description: string }) => Promise<void>;
+};
+
 export type ContainerProps = {
   as?: 'div' | 'section' | 'main';
 } & HTMLAttributes<HTMLDivElement>;

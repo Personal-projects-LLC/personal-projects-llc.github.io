@@ -8,6 +8,12 @@ export type Project = {
   userId: string;
 };
 
+export type ProjectCardProps = {
+  project: Project;
+  onEdit?: (project: Project) => void;
+  onDelete?: (project: Project) => void;
+};
+
 export type ProjectListProps = {
   projects: Project[];
 };
@@ -21,7 +27,8 @@ export enum ProjectStatus {
 
 export type CreateProjectDTO = {
   name: string;
-  description: string | null | undefined;
+  description?: string | null | undefined;
+  status: ProjectStatus;
 };
 
 export type UpdateProjectDTO = {
