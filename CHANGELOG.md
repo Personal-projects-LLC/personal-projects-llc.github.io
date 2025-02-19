@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.13.0...v1.14.0) (2025-02-19)
+
+
+### Features
+
+* add project creation functionality with validation and UI components ([fc4cbe1](https://github.com/Personal-projects-LLC/PBS/commit/fc4cbe10f0fe66d8b8011ce8a76b2b6f87cadf0c))
+
 # [1.13.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.12.0...v1.13.0) (2025-02-18)
 
 
