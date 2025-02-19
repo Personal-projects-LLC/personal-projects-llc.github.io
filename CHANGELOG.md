@@ -1,3 +1,11 @@
+# [1.22.0](https://github.com/Personal-projects-LLC/personal-projects-llc.github.io/compare/v1.21.0...v1.22.0) (2025-02-19)
+
+
+### Features
+
+* add deploy script to package.json for streamlined deployment process ([3040434](https://github.com/Personal-projects-LLC/personal-projects-llc.github.io/commit/304043489e0b5679469e0b8c687c814d68d7986a))
+* update deployment workflow and add gh-pages dependency ([700c8cb](https://github.com/Personal-projects-LLC/personal-projects-llc.github.io/commit/700c8cb2a389967d60381cc5d07784a4baf2f4b8))
+
 # [1.21.0](https://github.com/Personal-projects-LLC/personal-projects-llc.github.io/compare/v1.20.0...v1.21.0) (2025-02-19)
 
 
