@@ -1,3 +1,10 @@
+# [1.24.0](https://github.com/Personal-projects-LLC/personal-projects-llc.github.io/compare/v1.23.0...v1.24.0) (2025-02-19)
+
+
+### Features
+
+* update deploy script to include .nojekyll file for GitHub Pages compatibility ([a0d7fd4](https://github.com/Personal-projects-LLC/personal-projects-llc.github.io/commit/a0d7fd407d81a3a7fcecdc6bf0620556b60038da))
+
 # [1.23.0](https://github.com/Personal-projects-LLC/personal-projects-llc.github.io/compare/v1.22.0...v1.23.0) (2025-02-19)
 
 
