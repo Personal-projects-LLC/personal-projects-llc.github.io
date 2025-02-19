@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/Personal-projects-LLC/personal-projects-llc.github.io/compare/v1.17.0...v1.18.0) (2025-02-19)
+
+
+### Features
+
+* add feedback integration to Sentry client configuration ([f4caea3](https://github.com/Personal-projects-LLC/personal-projects-llc.github.io/commit/f4caea318787f5c7313bea1dcc63ed8cc936d31b))
+
 # [1.17.0](https://github.com/Personal-projects-LLC/personal-projects-llc.github.io/compare/v1.16.0...v1.17.0) (2025-02-19)
 
 
