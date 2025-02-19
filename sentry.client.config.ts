@@ -3,7 +3,7 @@
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/
 
 import * as Sentry from '@sentry/nextjs';
-import * as Spotlight from '@spotlightjs/spotlight';
+// import * as Spotlight from '@spotlightjs/spotlight';
 
 Sentry.init({
   // Sentry DSN
@@ -12,11 +12,13 @@ Sentry.init({
   // Add optional integrations for additional features
   integrations: [
     // You can remove this option if you're not planning to use the Sentry Session Replay feature:
-    Sentry.replayIntegration({
-      // Additional Replay configuration goes in here, for example:
-      maskAllText: true,
-      blockAllMedia: true,
-    }),
+    // Sentry.replayIntegration({
+    //   // Additional Replay configuration goes in here, for example:
+    //   maskAllText: true,
+    //   blockAllMedia: true,
+    // }),
+
+    Sentry.replayIntegration(),
   ],
 
   // Define how likely traces are sampled. Adjust this value in production, or use tracesSampler for greater control.
@@ -34,6 +36,6 @@ Sentry.init({
   debug: false,
 });
 
-if (process.env.NODE_ENV === 'development') {
-  Spotlight.init();
-}
+// if (process.env.NODE_ENV === 'development') {
+//   Spotlight.init();
+// }
