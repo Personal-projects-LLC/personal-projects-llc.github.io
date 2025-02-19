@@ -1,3 +1,10 @@
+# [1.23.0](https://github.com/Personal-projects-LLC/personal-projects-llc.github.io/compare/v1.22.0...v1.23.0) (2025-02-19)
+
+
+### Features
+
+* remove Sentry example API and page components ([a770d10](https://github.com/Personal-projects-LLC/personal-projects-llc.github.io/commit/a770d10136383c4b3a4bb287909d015c3e87bf5f))
+
 # [1.22.0](https://github.com/Personal-projects-LLC/personal-projects-llc.github.io/compare/v1.21.0...v1.22.0) (2025-02-19)
 
 
