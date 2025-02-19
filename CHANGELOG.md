@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.15.0...v1.16.0) (2025-02-19)
+
+
+### Features
+
+* update project creation links and modal handling with query parameters ([96bac41](https://github.com/Personal-projects-LLC/PBS/commit/96bac413b7a0c0f5808c3254b530bdf16d54abb5))
+
 # [1.15.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.14.0...v1.15.0) (2025-02-19)
 
 
