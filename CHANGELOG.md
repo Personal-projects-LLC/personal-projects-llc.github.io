@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/Personal-projects-LLC/personal-projects-llc.github.io/compare/v1.16.0...v1.17.0) (2025-02-19)
+
+
+### Features
+
+* integrate Sentry for error tracking and add deployment workflow ([f3bbe11](https://github.com/Personal-projects-LLC/personal-projects-llc.github.io/commit/f3bbe11fc8ce3d412ac0818ec42f6461f7eccc29))
+
 # [1.16.0](https://github.com/Personal-projects-LLC/PBS/compare/v1.15.0...v1.16.0) (2025-02-19)
 
 
